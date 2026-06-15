@@ -1,0 +1,21 @@
+{%extends 'base.html'%}
+{%block content%}
+<a href="/students/add/" >Add Student</a>
+<table border="1">
+    <tr>
+       
+        <th>Name</th>
+        <th>Email</th>
+        <th>Actions</th>
+        </tr>
+        {%for student in students%}
+        <tr>
+            <td>{{student.name}}</td>
+            <td>{{student.email}}</td>
+            <td><a href="/students/edit/{{student.id}}/">Edit</a> | 
+                <a href="/students/delete/{{student.id}}/">Delete</a> | 
+                <a href="/students/detail/{{student.id}}/">Detail</a></td>
+        </tr>
+        {%endfor%}
+    </table>
+{%endblock%}
